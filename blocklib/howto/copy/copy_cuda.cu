@@ -25,7 +25,7 @@ void apply_copy(
 void get_block_and_grid(int* minGrid, int* minBlock)
 {
     // https://developer.nvidia.com/blog/cuda-pro-tip-occupancy-api-simplifies-launch-configuration/
-    cudaOccupancyMaxPotentialhowtoize(minGrid, minBlock, apply_copy_kernel, 0, 0);
+    cudaOccupancyMaxPotentialBlockSize(minGrid, minBlock, apply_copy_kernel, 0, 0);
 }
 } // namespace howto
 } // namespace gr

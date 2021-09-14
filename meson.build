@@ -30,8 +30,6 @@ USE_CUDA = cuda_available and get_option('enable_cuda')
 cuda_dep = dependency('cuda', version : '>=10.1', required : USE_CUDA , modules : ['cufft'])
 cusp_dep = dependency('cusp', required : USE_CUDA)
 
-flatc = find_program('flatc', version : '>=1.12')
-
 prefix = get_option('prefix')
 # Escape spaces
 prefix_parts = prefix.split(' ')
