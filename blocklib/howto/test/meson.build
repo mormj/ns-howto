@@ -10,4 +10,9 @@ if get_option('enable_testing')
     test('qa_copy', find_program('qa_copy.py'), env: env)
     # test('qa_file_sink', find_program('qa_file_sink.py'), env: env)
 
+    if USE_CUDA
+    subdir('cuda')
+    endif
+
+
 endif
