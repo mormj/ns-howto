@@ -33,9 +33,7 @@ work_return_code_t copy_cuda::work(std::vector<block_work_input>& work_input,
     auto out = static_cast<uint8_t*>(work_output[0].items());
 
     auto noutput_items = work_output[0].n_items;
-    std::cout << " noutput_items: " << noutput_items << " d_itemsize" << d_itemsize << std::endl;
     int gridSize = (noutput_items * d_itemsize + d_block_size - 1) / d_block_size;
-    std::cout << "b: " << d_block_size << " g: " << gridSize;
     apply_copy(
         in, out, gridSize, d_block_size, d_stream);
     checkCudaErrors(cudaPeekAtLastError());
